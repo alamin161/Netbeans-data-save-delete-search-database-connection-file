@@ -1,0 +1,19 @@
+  conn= MySqlConnect.ConnectDB();
+       
+       String sql= "delete from user where id=?"; 
+
+       try
+       {
+       
+           pst = conn.prepareStatement(sql);
+           pst.setString(1, search.getText());
+           pst.execute();
+            JOptionPane.showMessageDialog(null, "Delete Successfully");
+            clear();
+            
+       
+       }
+       catch(Exception e)
+       {
+        JOptionPane.showMessageDialog(null, e);
+       }
