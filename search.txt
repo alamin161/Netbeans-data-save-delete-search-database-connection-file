@@ -1,0 +1,75 @@
+ conn= MySqlConnect.ConnectDB();
+       
+       String sql= "Select * from user where id=?";
+       try
+       {
+           pst= conn.prepareStatement(sql);
+           pst.setString(1,search.getText());
+           rs= pst.executeQuery();
+           
+           if(rs.next())
+           {
+           
+               
+               String add1= rs.getString("fname");
+               firstName.setText(add1);
+               String add2= rs.getString("lname");
+               lastName.setText(add2);
+               String add3= rs.getString("username");
+               userName.setText(add3);
+               String add4= rs.getString("password");
+               password.setText(add4);
+                String add5= rs.getString("email");
+               email.setText(add5);
+                String add6= rs.getString("phone");
+               phone.setText(add6);
+              
+    
+           }
+    }                                        
+  catch (Exception e)
+   {
+       JOptionPane.showMessageDialog(null, e);
+       
+   }
+
+
+
+
+
+ conn= MySqlConnect.ConnectDB();
+       
+       String sql= "Select * from `staffinq` where id=?";
+       try
+       {
+           pst= conn.prepareStatement(sql);
+           pst.setString(1,search.getText());
+           rs= pst.executeQuery();
+           
+           if(rs.next())
+           {
+           
+               
+               String add1= rs.getString("id");
+               id.setText(add1);
+               String add2= rs.getString("fast_name");
+               fn.setText(add2);
+               String add3= rs.getString("last_name");
+               ln.setText(add3);
+               String add4= rs.getString("user_name");
+               un.setText(add4);
+                String add5= rs.getString("sex");
+               sex.setText(add5);
+                String add6= rs.getString("phone_number");
+               cn.setText(add6);
+                String add7= rs.getString("address");
+               add.setText(add7);
+              
+    
+           }
+    }                                        
+  catch (Exception e)
+   {
+       JOptionPane.showMessageDialog(null, e);
+       
+   }
