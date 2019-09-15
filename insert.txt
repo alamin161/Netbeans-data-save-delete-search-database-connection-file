@@ -1,0 +1,27 @@
+conn= MySqlConnect.ConnectDB();
+       String sql="Insert into user (id,fname,lname,username,password,email,phone) value (?,?,?,?,?,?,?)";
+       
+       try
+       {
+         
+            pst=conn.prepareStatement(sql);
+           pst.setString(1,id.getText());
+            pst.setString(2,firstName.getText());
+             pst.setString(3,lastName.getText());
+              pst.setString(4,userName.getText());
+              pst.setString(5,password.getText());
+               pst.setString(6,email.getText());
+                pst.setString(7,phone.getText());
+               
+                 
+                pst.execute();
+                 
+                 JOptionPane.showMessageDialog(null, "Registration successfull");
+       
+       }
+       catch(Exception e)
+       {
+         
+            JOptionPane.showMessageDialog(null, "Registration Failed");
+           
+       }
